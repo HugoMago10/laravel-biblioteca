@@ -14,16 +14,18 @@ class CrearTablaLibroPrestamo extends Migration
     public function up()
     {
         Schema::create('libro_prestamo', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_libro');
-            $table->foreign('id_libro','fk_libroprestamo_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
-            $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario','fk_libroprestamo_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
+            $table->increments('id_libro_prestamo');
+            $table->unsignedInteger('id_libro');
+            $table->foreign('id_libro','fk_libroprestamo_libro')->references('id_libro')->on('libro')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedInteger('id_usuario');
+            $table->foreign('id_usuario','fk_libroprestamo_usuario')->references('id_usuario')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->date('fecha_prestamo');
             $table->string('prestado_a',100);
             $table->boolean ('estado');
             $table->date('fecha_devolucion')->nullable();
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

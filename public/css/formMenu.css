@@ -1,0 +1,17 @@
+label{
+    position: fixed;
+    text-align: center;
+}
+label.requerido:after{
+    content: '*';
+    color: red;
+}
+
+#form-button{
+    display: flex;
+    justify-content: center;
+}
+.btn-success, .btn-default{
+    margin: 0 10px;
+    width: 100px;
+}

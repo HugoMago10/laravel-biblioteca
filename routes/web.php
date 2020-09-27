@@ -18,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get('/', 'InicioController@index');
+//Route::get('admin/permiso', 'Admin/permisoController@index')->name('permiso');
+Route::group(['prefix'=>'admin','namespace'=>'admin'], function(){
+    Route::get('permiso', 'PermisoController@index')->name('permiso');
+    Route::get('permiso/crear', 'PermisoController@create')->name('crear_permiso');
+    Route::get('menu','MenuController@index')->name('menu');
+    Route::get('menu/crear', 'MenuController@create')->name('crear_menu');
+    Route::post('menu', 'MenuController@store')->name('guardar_menu');
+});

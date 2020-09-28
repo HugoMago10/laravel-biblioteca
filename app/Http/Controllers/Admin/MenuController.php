@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Menu;
+use App\Http\Requests\ValidacionMenu;
 
 class MenuController extends Controller
 {
@@ -34,10 +35,11 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidacionMenu $request)
     {
         /* dd( $request->all() ); */
-        Menu::create($request->all());
+        Menu::create( $request->all() );
+        return redirect('admin/menu/crear')->with('mensaje','Menú creado con exito');
     }
 
     /**
@@ -71,7 +73,7 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return redirect('admin/menu')->with('mensaje','Menú actualizado con exito');
     }
 
     /**

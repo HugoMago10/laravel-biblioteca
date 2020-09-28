@@ -9,9 +9,11 @@
     <div class="row">
         <div class="col-lg-12 mt-2">
             <div class="card-body">
+                @include('includes.form-error')
+                @include('includes.mensaje')
                 <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">Horizontal Form</h3>
+                        <h3 class="card-title">Crear Menu</h3>
                     </div>
                     <!-- form start -->
                     <form action="{{route('guardar_menu')}}" method="post" id="form-general" class="form-horizontal">

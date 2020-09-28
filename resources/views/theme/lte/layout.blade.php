@@ -54,8 +54,9 @@
         <!-- AdminLTE for demo purposes -->
         <script src='{{asset("assets/$theme/dist/js/demo.js")}}'></script>
         <!-- jqueryValidation -->
-        <script src='{{asset("js/jquery.validate.js")}}'></script>
-        <script src='{{asset("js/localization/")}}'></script>
+        <script src='{{asset("js/jquery-validation/jquery.validate.min.js")}}'></script>
+        <script src='{{asset("js/jquery-validation/localization_es/messages_es.min.js")}}'></script>
+        <script src='{{asset("js/funciones.js")}}'></script>
 
         @yield("script") <!-- si en alguna pagina requiro el script solamente lo invoco -->
 

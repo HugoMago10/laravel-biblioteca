@@ -1,6 +1,6 @@
 label{
     position: fixed;
-    text-align: center;
+    text-align: end;
 }
 label.requerido:after{
     content: '*';
@@ -14,4 +14,10 @@ label.requerido:after{
 .btn-success, .btn-default{
     margin: 0 10px;
     width: 100px;
+}
+#mostrar-icono{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
 }
